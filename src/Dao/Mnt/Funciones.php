@@ -17,7 +17,7 @@ class Funciones extends Table
     }
     //crear funciones no esta ya que las funciones se crean automaticamente
 
-    public static function editarFuncion($fndesc, $fnest, $fntyp,$fncod)
+    public static function editarFuncion($fndsc, $fnest, $fntyp,$fncod)
     {
         $sqlstr = "UPDATE funciones set fndsc=:fndsc, fnest=:fnest, fntyp=:fntyp where fncod = :fncod;";
         $parametros = array(
@@ -31,7 +31,7 @@ class Funciones extends Table
 
     public static function eliminarFuncion($fncod)
     {
-        $sqlstr = "DELETE FROM funciones where fncod=:fncod;";
+        $sqlstr = "UPDATE funciones SET fnest='INA' where fncod=:fncod;";
         $parametros = array(
             "fncod" => $fncod
         );

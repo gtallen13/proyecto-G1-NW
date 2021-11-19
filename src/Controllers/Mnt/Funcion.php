@@ -5,7 +5,7 @@ use Controllers\PrivateController;
 class Funcion extends PrivateController
 {
 
-    private static function yes()
+    private static function yeah()
     {
         \Utilities\Site::redirectToWithMsg(
             "index.php?page=mnt_funciones",
