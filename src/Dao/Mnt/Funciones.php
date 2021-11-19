@@ -3,46 +3,37 @@ namespace Dao\Mnt;
 
 use Dao\Table;
 
-class Roles extends Table
+class Funciones extends Table
 {
-    public static function obtenerRoles()
+    public static function obtenerFunciones()
     {
-        $sqlStr = "SELECT * from roles;";
+        $sqlStr = "SELECT * from funciones;";
         return self::obtenerRegistros($sqlStr, array());
     }
-    public static function obtenerRol($rolescod)
+    public static function obtenerFuncion($fncod)
     {
-        $sqlStr = "SELECT * from roles where rolescod = :rolescod;";
-        return self::obtenerUnRegistro($sqlStr, array("rolescod"=> $rolescod));
+        $sqlStr = "SELECT * from funciones where fncod = :fncod;";
+        return self::obtenerUnRegistro($sqlStr, array("fncod"=> $fncod));
     }
-    public static function crearRol($rolesdsc, $rolesest)
+    //crear funciones no esta ya que las funciones se crean automaticamente
+
+    public static function editarFuncion($fndesc, $fnest, $fntyp,$fncod)
     {
-        $upperCod = strtoupper($rolesdsc);
-        $sqlstr = "INSERT INTO roles (rolescod,rolesdsc, rolesest) values (:rolescod,:rolesdsc, :rolesest);";
+        $sqlstr = "UPDATE funciones set fndsc=:fndsc, fnest=:fnest, fntyp=:fntyp where fncod = :fncod;";
         $parametros = array(
-            "rolescod" => $upperCod,
-            "rolesdsc" => $rolesdsc,
-            "rolesest" => $rolesest
+            "fndsc" =>  $fndsc,
+            "fnest" =>  $fnest,
+            "fntyp" => $fntyp,
+            "fncod" => $fncod
         );
         return self::executeNonQuery($sqlstr, $parametros);
     }
 
-    public static function editarRol($rolesdsc, $rolesest, $rolescod)
+    public static function eliminarFuncion($fncod)
     {
-        $sqlstr = "UPDATE roles set rolesdsc=:rolesdsc, rolesest=:rolesest where rolescod = :rolescod;";
+        $sqlstr = "DELETE FROM funciones where fncod=:fncod;";
         $parametros = array(
-            "rolesdsc" =>  $rolesdsc,
-            "rolesest" =>  $rolesest,
-            "rolescod" => $rolescod
-        );
-        return self::executeNonQuery($sqlstr, $parametros);
-    }
-
-    public static function eliminarRol($rolescod)
-    {
-        $sqlstr = "DELETE FROM roles where rolescod=:rolescod;";
-        $parametros = array(
-            "rolescod" => $rolescod
+            "fncod" => $fncod
         );
         return self::executeNonQuery($sqlstr, $parametros);
     }
