@@ -10,7 +10,7 @@
     <input type="text" readonly name="fncoddummy" value="{{fncod}}"/>
     </section>
     <section>
-      <label for="fndsc">Funcion</label>
+      <label for="fndsc">Nombre de Funcion</label>
       <input type="text" {{readonly}} name="fndsc" value="{{fndsc}}" maxlength="45" placeholder="Nombre de Funcion"/>
     </section>
     <section>

@@ -21,7 +21,7 @@
         <td>{{usercod}}</td>
         <td>
           {{if ~CanView}}
-          <a >{{useremail}}</a>
+          <a href="index.php?page=mnt_usuario&mode=DSP&usercod={{usercod}}">{{useremail}}</a>
           {{endif ~CanView}}
 
           {{ifnot ~CanView}}
