@@ -1,6 +1,6 @@
 <?php
 namespace Controllers\Mnt;
-use Controller\PrivateController;
+use Controllers\PrivateController;
 use Views\Renderer;
 
 
@@ -10,9 +10,8 @@ class Funciones extends PrivateController
     {
         $viewData = array();
         $viewData["items"] = \Dao\Mnt\Funciones::obtenerFunciones();
-        $viewData["new_enabled"] = $this-isFeatureAuthorized("mnt_funciones_new");
-        $viewData["new_edit"] = $this-isFeatureAuthorized("mnt_funciones_edit");
-        $viewData["new_delete"] = $this-isFeatureAuthorized("mnt_funciones_delete");
+        $viewData["edit_enabled"] = $this->isFeatureAutorized("mnt_funciones_edit");
+        $viewData["delete_enabled"] = $this->isFeatureAutorized("mnt_funciones_delete");
 
         Renderer::render("mnt/funciones",$viewData);
     }

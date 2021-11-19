@@ -25,6 +25,12 @@ class Nav {
                 "nav_label" => "Roles"
             );
         }
+        if (\Utilities\Security::isAuthorized($userID, "WW_Funcion")) {
+            $tmpNAVIGATION[] = array(
+                "nav_url" => "index.php?page=mnt_funciones",
+                "nav_label" => "Funciones"
+            );
+        }
        
         \Utilities\Context::setContext("NAVIGATION", $tmpNAVIGATION);
     }
