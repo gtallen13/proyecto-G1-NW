@@ -47,5 +47,3 @@ class Categorias extends Table
         return self::executeNonQuery($sqlstr, $parametros);
     }
 }
-
-?>
