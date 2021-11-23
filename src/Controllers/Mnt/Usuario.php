@@ -114,30 +114,28 @@ class Usuario extends PublicController
                 $viewData["Errors"][] = "Tipo de usuario incorrecto";
             }
 
-            if (!$viewData["hasErrors"]) {
-                switch ($viewData["mode"]) {
-                    case "INS":
-                        if (\Dao\Security\Security::newUsuario($viewData["useremail"], $viewData["userpswd"], $viewData["username"], $viewData["userest"], $viewData["usertipo"], $viewData["userpswdest"])) {
-                            $this->yeah();
-                        }
-                        break;
-                    case "UPD":
-                        if (\Dao\Mnt\Usuarios::editarUsuario(
-                            $viewData["username"],
-                            $viewData["userpswdest"],
-                            $viewData["userest"],
-                            $viewData["usertipo"],
-                            $viewData["usercod"]
-                        )) {
-                            $this->yeah();
-                        }
-                        break;
-                    case "DEL":
-                        if (\Dao\Mnt\Usuarios::eliminarUsuario($viewData["usercod"])) {
-                            $this->yeah();
-                        }
-                        break;
-                }
+            switch ($viewData["mode"]) {
+                case "INS":
+                    if (\Dao\Security\Security::newUsuario($viewData["useremail"], $viewData["userpswd"], $viewData["username"], $viewData["userest"], $viewData["usertipo"], $viewData["userpswdest"])) {
+                        $this->yeah();
+                    }
+                    break;
+                case "UPD":
+                    if (\Dao\Mnt\Usuarios::editarUsuario(
+                        $viewData["username"],
+                        $viewData["userpswdest"],
+                        $viewData["userest"],
+                        $viewData["usertipo"],
+                        $viewData["usercod"]
+                    )) {
+                        $this->yeah();
+                    }
+                    break;
+                case "DEL":
+                    if (\Dao\Mnt\Usuarios::eliminarUsuario($viewData["usercod"])) {
+                        $this->yeah();
+                    }
+                    break;
             }
         } else {
             if (isset($_GET["mode"])) {
