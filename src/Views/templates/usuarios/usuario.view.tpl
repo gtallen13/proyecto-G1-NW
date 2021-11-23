@@ -6,6 +6,7 @@
     <label for="usercod">Codigo</label>
     <input type="hidden" id="usercod" name="usercod" value="{{usercod}}"/>
     <input type="hidden" id="mode" name="mode" value="{{mode}}" />
+    <input type="hidden" id="xsrftoken" name="xsrftoken" value="{{xsrftoken}}" />
     <input type="text" readonly name="usercoddummy" value="{{usercod}}"/>
     </section>
     <section>
