@@ -74,7 +74,7 @@ class Usuario extends PublicController
                 $viewData["hasErrors"] = true;
                 $viewData["Error"][] = "El correo no puede ir vacío";
             }
-            if (\Utilities\Validators::IsValidEmail($viewData["useremail"])) {
+            if (!\Utilities\Validators::IsValidEmail($viewData["useremail"])) {
                 $viewData["hasErrors"] = true;
                 $viewData["Error"][] = "Ingrese un correo valido";
             }
