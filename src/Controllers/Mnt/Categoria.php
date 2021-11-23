@@ -65,8 +65,6 @@ class Categoria extends PublicController
                 $viewData["hasErrors"] = true;
                 $viewData["Errors"][] = "Estado de Categoria Incorrecto!";
             }
-
-            
             if (!$viewData["hasErrors"]) {
                 switch($viewData["mode"]) {
                 case "INS":

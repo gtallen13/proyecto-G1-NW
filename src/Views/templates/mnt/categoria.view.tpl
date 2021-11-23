@@ -41,8 +41,6 @@
     </section>
   </form>
 </section>
-
-
 <script>
   document.addEventListener("DOMContentLoaded", function(){
       document.getElementById("btnCancelar").addEventListener("click", function(e){
