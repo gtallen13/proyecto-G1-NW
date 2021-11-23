@@ -72,23 +72,23 @@ class Usuario extends PublicController
             //validaciones
             if (\Utilities\Validators::IsEmpty($viewData["useremail"])) {
                 $viewData["hasErrors"] = true;
-                $viewData["Error"][] = "El correo no puede ir vacío";
+                $viewData["Errors"][] = "El correo no puede ir vacío";
             }
             if (!\Utilities\Validators::IsValidEmail($viewData["useremail"])) {
                 $viewData["hasErrors"] = true;
-                $viewData["Error"][] = "Ingrese un correo valido";
+                $viewData["Errors"][] = "Ingrese un correo valido";
             }
             if (\Utilities\Validators::IsEmpty($viewData["username"])) {
                 $viewData["hasErrors"] = true;
-                $viewData["Error"][] = "El correo no puede ir vacío";
+                $viewData["Errors"][] = "El correo no puede ir vacío";
             }
             if (\Utilities\Validators::IsEmpty($viewData["userpswd"])) {
                 $viewData["hasErrors"] = true;
-                $viewData["Error"][] = "La contraseña no puede ir vacía";
+                $viewData["Errors"][] = "La contraseña no puede ir vacía";
             }
             if (\Utilities\Validators::IsValidPassword($viewData["userpswd"])) {
                 $viewData["hasErrors"] = true;
-                $viewData["Error"][] = "Ingrese una contraseña valida";
+                $viewData["Errors"][] = "Ingrese una contraseña valida";
             }
             if (($viewData["userest"] == "ACT"
                     || $viewData["userest"] == "INA"
