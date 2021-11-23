@@ -42,7 +42,7 @@ class Usuario extends PublicController
             "usertipo_ADM" => "",
             "usertipo_AUD" => "",
             "hasErrors" => false,
-            "aErrors" => array(),
+            "Errors" => array(),
             "showaction" => true,
             "readonly" => false,
             "show" => "none"

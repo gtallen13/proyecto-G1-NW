@@ -4,7 +4,8 @@ namespace Controllers\Mnt;
 
 use Controllers\PrivateController;
 
-class Usuarios extends PrivateController{
+class Usuarios extends PrivateController
+{
     public function run():void
     {
         $viewData = array();
@@ -50,5 +51,3 @@ foreach Usuarios
         }
 endfor Usuarios
 */
-
-?>
