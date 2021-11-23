@@ -90,14 +90,6 @@ class Usuario extends PublicController
                 $viewData["hasErrors"] = true;
                 $viewData["Error"][] = "Ingrese una contraseña valida";
             }
-            if (($viewData["userpswdest"] == "ACT"
-                    || $viewData["userpswdest"] == "INA"
-                    || $viewData["userpswdest"] == "BLQ"
-                    || $viewData["userpswdest"] == "SUS") == false
-            ) {
-                $viewData["hasErrors"] = true;
-                $viewData["Errors"][] = "Estado de contraseña incorrecto";
-            }
             if (($viewData["userest"] == "ACT"
                     || $viewData["userest"] == "INA"
                     || $viewData["userest"] == "BLQ"
@@ -106,36 +98,46 @@ class Usuario extends PublicController
                 $viewData["hasErrors"] = true;
                 $viewData["Errors"][] = "Estado de usuario incorrecto";
             }
-            if (($viewData["userest"] == "PBL"
-                    || $viewData["userest"] == "ADM"
-                    || $viewData["userest"] == "AUD") == false
+            if (($viewData["userpswdest"] == "ACT"
+                    || $viewData["userpswdest"] == "INA"
+                    || $viewData["userpswdest"] == "BLQ"
+                    || $viewData["userpswdest"] == "SUS") == false
+            ) {
+                $viewData["hasErrors"] = true;
+                $viewData["Errors"][] = "Estado de contraseña incorrecto";
+            }
+            if (($viewData["usertipo"] == "PBL"
+                    || $viewData["usertipo"] == "ADM"
+                    || $viewData["usertipo"] == "AUD") == false
             ) {
                 $viewData["hasErrors"] = true;
                 $viewData["Errors"][] = "Tipo de usuario incorrecto";
             }
 
-            switch ($viewData["mode"]) {
-                case "INS":
-                    if (\Dao\Security\Security::newUsuario($viewData["useremail"], $viewData["userpswd"], $viewData["username"], $viewData["userest"], $viewData["usertipo"], $viewData["userpswdest"])) {
-                        $this->yeah();
-                    }
-                    break;
-                case "UPD":
-                    if (\Dao\Mnt\Usuarios::editarUsuario(
-                        $viewData["username"],
-                        $viewData["userpswdest"],
-                        $viewData["userest"],
-                        $viewData["usertipo"],
-                        $viewData["usercod"]
-                    )) {
-                        $this->yeah();
-                    }
-                    break;
-                case "DEL":
-                    if (\Dao\Mnt\Usuarios::eliminarUsuario($viewData["usercod"])) {
-                        $this->yeah();
-                    }
-                    break;
+            if (!$viewData["hasErrors"]) {
+                switch ($viewData["mode"]) {
+                    case "INS":
+                        if (\Dao\Security\Security::newUsuario($viewData["useremail"], $viewData["userpswd"], $viewData["username"], $viewData["userest"], $viewData["usertipo"], $viewData["userpswdest"])) {
+                            $this->yeah();
+                        }
+                        break;
+                    case "UPD":
+                        if (\Dao\Mnt\Usuarios::editarUsuario(
+                            $viewData["username"],
+                            $viewData["userpswdest"],
+                            $viewData["userest"],
+                            $viewData["usertipo"],
+                            $viewData["usercod"]
+                        )) {
+                            $this->yeah();
+                        }
+                        break;
+                    case "DEL":
+                        if (\Dao\Mnt\Usuarios::eliminarUsuario($viewData["usercod"])) {
+                            $this->yeah();
+                        }
+                        break;
+                }
             }
         } else {
             if (isset($_GET["mode"])) {
