@@ -59,9 +59,9 @@
     {{if hasErrors}}
         <section>
           <ul>
-            {{foreach aErrors}}
+            {{foreach Errors}}
                 <li>{{this}}</li>
-            {{endfor aErrors}}
+            {{endfor Errors}}
           </ul>
         </section>
     {{endif hasErrors}}
