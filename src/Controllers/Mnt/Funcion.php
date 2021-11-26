@@ -139,7 +139,7 @@ class Funcion extends PrivateController
         }
 
         //Generar Token xsrf
-        // Generar un token XSRF para evitar esos ataques
+        // Generar un token XSRF para evitar esos 
         $viewData["xsrftoken"] = md5($this->name . random_int(10000, 99999));
         $_SESSION["xsrftoken"] = $viewData["xsrftoken"];
 
