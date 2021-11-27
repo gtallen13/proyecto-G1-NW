@@ -55,8 +55,17 @@ class Funcion extends PrivateController
             //validaciones
             if (\Utilities\Validators::IsEmpty($viewData["fndsc"])) {
                 $viewData["hasErrors"] = true;
-                $viewData["Errors"][] = "Este campo no Puede Ir Vacio!";
+                $viewData["Errors"][] = "Agregar una descripcion";
             }
+            if (\Utilities\Validators::IsEmpty($viewData["fnest"])) {
+                $viewData["hasErrors"] = true;
+                $viewData["Errors"][] = "Agregar un estatus";
+            }
+            if (\Utilities\Validators::IsEmpty($viewData["fntype"])) {
+                $viewData["hasErrors"] = true;
+                $viewData["Errors"][] = "Agregar un type";
+            }
+            
             if (($viewData["fnest"] == "INA"
                 || $viewData["fnest"] == "ACT"
                 || $viewData["fnest"] == "PLN"
