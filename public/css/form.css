@@ -1,37 +1,51 @@
-label{
+.form-title {
+  font-weight: 100;
+  font-size: 40px;
+  width: 40%;
+  border-bottom: 1px solid rgb(189, 187, 187);
+}
+th {
+  font-weight: 500;
+  font-size: 20px;
+  background-color: white;
+}
+td {
+  font-size: 15px;
+  text-align: center;
+}
+td a {
+  margin: 10px;
+  transition: 0.5s all;
+}
+td a:hover {
+  background-color: black;
+  color: whitesmoke;
+}
+label {
   font-weight: 700;
 }
 
-input{
+input {
   font-size: 1rem;
-  padding:0.75rem 0.5rem;
+  padding: 0.75rem 0.5rem;
   border: 1px solid var(--primary_bg300);
 }
 
-input.width-full{
-  width:100%;
+input.width-full {
+  width: 100%;
 }
 
-button{
-  background-color: var(--primary_bg300);
-  color: var(--primary_text);
-  border: solid 2px var(--primary_bg300);
-  padding: 0.75rem;
-  font-size: 1rem;
-  font-weight: 700;
+button#btnAdd {
   cursor: pointer;
+  font-size: 20px;
+  font-weight: 500;
+  border: none;
+  background-color: whitesmoke;
+  color: black;
+  transition: all 0.5s;
 }
 
-button:hover{
-  background-color: var();
-  box-shadow: 1px 1px 3px var(--primary_bg);
-}
-
-button.primary{
-  background-color: var(--primary_action_bg);
-  color: var(--primary_action_tx);
-}
-
-button.primary:hover{
-   box-shadow: 1px 1px 3px var(--primary_action_bg);
+button#btnAdd:hover {
+  color: whitesmoke;
+  background-color: black;
 }
