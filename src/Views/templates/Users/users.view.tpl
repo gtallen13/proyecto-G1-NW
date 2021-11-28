@@ -1,3 +1,6 @@
+<head>
+  <link rel="stylesheet" href="/{{BASE_DIR}}/public/css/form.css"/>
+</head>
 <h1 class="form-title">User Management</h1>
 <section class="WWFilter">
 
