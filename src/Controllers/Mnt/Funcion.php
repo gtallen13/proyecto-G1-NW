@@ -101,7 +101,7 @@ class Funcion extends PrivateController
         else
         {
             // se ejecuta si se refresca o viene la peticion
-            // desde la lista
+            // desde la lista.
             if (isset($_GET["mode"]))
             {
                 if(!isset($modeDscArr[$_GET["mode"]]))
