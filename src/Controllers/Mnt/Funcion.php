@@ -48,9 +48,32 @@ class Funcion extends PrivateController
             $viewData["fnest"] = $_POST["fnest"];
             $viewData["fntyp"] = $_POST["fntyp"];
             //Validar token xsrf
+            if (!isset($_SESSION["xsrftoken"]) || $viewData["xsrftoken"] != $_SESSION["xsrftoken"]) {
+                $this->nope();
+            }
 
             //validaciones
-
+            if (\Utilities\Validators::IsEmpty($viewData["fndsc"])) {
+                $viewData["hasErrors"] = true;
+                $viewData["Errors"][] = "Agregar una descripcion";
+            }
+            if (\Utilities\Validators::IsEmpty($viewData["fnest"])) {
+                $viewData["hasErrors"] = true;
+                $viewData["Errors"][] = "Agregar un estatus";
+            }
+            if (\Utilities\Validators::IsEmpty($viewData["fntype"])) {
+                $viewData["hasErrors"] = true;
+                $viewData["Errors"][] = "Agregar un type";
+            }
+            
+            if (($viewData["fnest"] == "INA"
+                || $viewData["fnest"] == "ACT"
+                || $viewData["fnest"] == "PLN"
+                ) == false
+            ) {
+                $viewData["hasErrors"] = true;
+                $viewData["Errors"][] = "Algo salio mal!";
+            }
 
             switch($viewData["mode"])
             {
@@ -78,7 +101,7 @@ class Funcion extends PrivateController
         else
         {
             // se ejecuta si se refresca o viene la peticion
-            // desde la lista
+            // desde la lista.
             if (isset($_GET["mode"]))
             {
                 if(!isset($modeDscArr[$_GET["mode"]]))
@@ -125,6 +148,10 @@ class Funcion extends PrivateController
         }
 
         //Generar Token xsrf
+        // Generar un token XSRF para evitar esos 
+        $viewData["xsrftoken"] = md5($this->name . random_int(10000, 99999));
+        $_SESSION["xsrftoken"] = $viewData["xsrftoken"];
+
         \Views\Renderer::render("mnt/funcion",$viewData);
 
     }
