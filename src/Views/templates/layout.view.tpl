@@ -40,7 +40,7 @@
   <main>
   {{{page_content}}}
   </main>
-  <div><img src="pila-de-libros.png"/></div>
+  <div align="center"><img src="public/imgs/hero/libros.png"> </div>
   <footer>
     <div>Proyecto de Libros Honduras La Ceiba/Atlantida &copy;</div>
   </footer>
