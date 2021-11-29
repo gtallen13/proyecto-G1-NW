@@ -35,7 +35,7 @@ input.width-full {
   width: 100%;
 }
 
-button#btnAdd {
+a#btnAdd {
   cursor: pointer;
   font-size: 20px;
   font-weight: 500;
@@ -45,7 +45,16 @@ button#btnAdd {
   transition: all 0.5s;
 }
 
-button#btnAdd:hover {
+a#btnAdd:hover {
   color: whitesmoke;
   background-color: black;
+}
+/* Formulario */
+section.ww-form-wrapper {
+  background-color: black;
+}
+section.ww-form {
+  display: flex;
+  align-items: center;
+  flex-direction: space-evenly;
 }
