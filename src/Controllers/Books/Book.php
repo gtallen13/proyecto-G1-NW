@@ -176,7 +176,7 @@ class Book extends PublicController
         }
         if ($viewData["mode"] == "INS") {
             $viewData["mode_dsc"] = $modeDscArr["INS"];
-            $viewData["show"] = "block";
+            $viewData["show"] = "flex";
         } else {
             $tmpLibro = \Dao\Mnt\Books::obtenerLibro($viewData["idlibro"]);
             $viewData["nomlibro"] = $tmpLibro["nomlibro"];
