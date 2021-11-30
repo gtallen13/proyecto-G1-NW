@@ -39,9 +39,8 @@
   </header>
   <main>
   {{{page_content}}}
-  </main>
-  <div align="center"><img src="public/imgs/hero/libros.png"> </div>
   <footer>
+    <div display: flex; align="center"><img src="public/imgs/hero/libros.png"> </div>
     <div>Proyecto de Libros Honduras La Ceiba/Atlantida &copy;</div>
   </footer>
   {{foreach EndScripts}}
