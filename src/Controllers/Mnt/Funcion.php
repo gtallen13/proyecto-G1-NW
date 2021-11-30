@@ -28,7 +28,6 @@ class Funcion extends PrivateController
             "fndsc" => "",
             "fnest_ACT" => "",
             "fnest_INA" => "",
-            "fntyp" => "",
             "hasErrors" => false,
             "Errors" => array(),
             "showaction" => true,
@@ -46,7 +45,7 @@ class Funcion extends PrivateController
             $viewData["fncod"] = $_POST["fncod"];
             $viewData["fndsc"] = $_POST["fndsc"];
             $viewData["fnest"] = $_POST["fnest"];
-            $viewData["fntyp"] = $_POST["fntyp"];
+            $viewData["xsrftoken"] = $_POST["xsrftoken"];
             //Validar token xsrf
             if (!isset($_SESSION["xsrftoken"]) || $viewData["xsrftoken"] != $_SESSION["xsrftoken"]) {
                 $this->nope();
@@ -61,9 +60,12 @@ class Funcion extends PrivateController
                 $viewData["hasErrors"] = true;
                 $viewData["Errors"][] = "Porfavor agregue un estatus";
             }
-            if (\Utilities\Validators::IsEmpty($viewData["fntype"])) {
+            if (($viewData["fnest"] == "INA"
+                || $viewData["fnest"] == "ACT"
+                ) == false
+            ) {
                 $viewData["hasErrors"] = true;
-                $viewData["Errors"][] = "Porfavor agregue un tipo";
+                $viewData["Errors"][] = "Estado de Categoria Incorrecto!";
             }
 
             if (!$viewData["hasErrors"]) {
