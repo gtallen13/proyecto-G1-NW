@@ -55,47 +55,40 @@ class Funcion extends PrivateController
             //validaciones
             if (\Utilities\Validators::IsEmpty($viewData["fndsc"])) {
                 $viewData["hasErrors"] = true;
-                $viewData["Errors"][] = "Agregar una descripcion";
+                $viewData["Errors"][] = "Porfavor agregue una descripcion";
             }
             if (\Utilities\Validators::IsEmpty($viewData["fnest"])) {
                 $viewData["hasErrors"] = true;
-                $viewData["Errors"][] = "Agregar un estatus";
+                $viewData["Errors"][] = "Porfavor agregue un estatus";
             }
             if (\Utilities\Validators::IsEmpty($viewData["fntype"])) {
                 $viewData["hasErrors"] = true;
-                $viewData["Errors"][] = "Agregar un type";
-            }
-            
-            if (($viewData["fnest"] == "INA"
-                || $viewData["fnest"] == "ACT"
-                || $viewData["fnest"] == "PLN"
-                ) == false
-            ) {
-                $viewData["hasErrors"] = true;
-                $viewData["Errors"][] = "Algo salio mal!";
+                $viewData["Errors"][] = "Porfavor agregue un tipo";
             }
 
-            switch($viewData["mode"])
-            {
-                case "UPD":
-                    if (\Dao\Mnt\Funciones::editarFuncion(
-                        $viewData["fndsc"],
-                        $viewData["fnest"],
-                        $viewData["fntyp"],
-                        $viewData["fncod"]
-                    ))
-                    {
-                        $this->yeah();
-                    }
-                    break;
-                case "DEL":
-                    if(\Dao\Mnt\Funciones::eliminarFuncion(
-                        $viewData["fncod"]
-                    ))
-                    {
-                        $this->yeah();
-                    }
-                    break;
+            if (!$viewData["hasErrors"]) {
+                switch($viewData["mode"])
+                {
+                    case "UPD":
+                        if (\Dao\Mnt\Funciones::editarFuncion(
+                            $viewData["fndsc"],
+                            $viewData["fnest"],
+                            $viewData["fntyp"],
+                            $viewData["fncod"]
+                        ))
+                        {
+                            $this->yeah();
+                        }
+                        break;
+                    case "DEL":
+                        if(\Dao\Mnt\Funciones::eliminarFuncion(
+                            $viewData["fncod"]
+                        ))
+                        {
+                            $this->yeah();
+                        }
+                        break;
+                }
             }
         } 
         else
