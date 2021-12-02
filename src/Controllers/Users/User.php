@@ -1,10 +1,10 @@
 <?php
 
-namespace Controllers\Mnt;
+namespace Controllers\Users;
 
 use Controllers\PublicController;
 
-class Usuario extends PublicController
+class User extends PublicController
 {
     private function nope()
     {
@@ -48,7 +48,7 @@ class Usuario extends PublicController
             "show" => "none"
         );
         $modeDscArr = array(
-            "INS" => "Nueva Usuario",
+            "INS" => "Nuevo Usuario",
             "UPD" => "Editando Usuario (%s) %s",
             "DEL" => "Eliminando Usuario (%s) %s",
             "DSP" => "Detalle de Usuario (%s) %s"
@@ -197,6 +197,6 @@ class Usuario extends PublicController
         $viewData["xsrftoken"] = md5($this->name . random_int(10000, 99999));
         $_SESSION["xsrftoken"] = $viewData["xsrftoken"];
 
-        \Views\Renderer::render("usuarios/usuario", $viewData);
+        \Views\Renderer::render("users/user", $viewData);
     }
 }

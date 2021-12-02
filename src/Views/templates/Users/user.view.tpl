@@ -1,32 +1,26 @@
+
 <h1>{{mode_dsc}}</h1>
 <link rel="stylesheet" href="/{{BASE_DIR}}/public/css/usuario.css" />
-<section>
-  <form action="index.php?page=mnt_usuario&mode={{mode}}&usercod={{usercod}}"
-    method="POST" >
-    <section>
-    <label for="usercod">Codigo</label>
-    <br>
-    <input type="hidden" id="usercod" name="usercod" value="{{usercod}}"/>
-    <input type="hidden" id="mode" name="mode" value="{{mode}}" />
-    <input type="hidden" id="xsrftoken" name="xsrftoken" value="{{xsrftoken}}" />
-    <input type="text" readonly name="usercoddummy" value="{{usercod}}"/>
+<section class="ww-form-wrapper">
+  <form action="index.php?page=users_user&mode={{mode}}&usercod={{usercod}}"
+    method="POST" class="ww-form">
+    <section class="row">
+      <label for="usercod">Codigo</label>
+      <input type="hidden" id="usercod" name="usercod" value="{{usercod}}"/>
+      <input type="hidden" id="mode" name="mode" value="{{mode}}" />
+      <input type="hidden" id="xsrftoken" name="xsrftoken" value="{{xsrftoken}}" />
+      <input type="text" readonly name="usercoddummy" value="{{usercod}}"/>
     </section>
-    <br>
-    <section>
+    <section class="row">
       <label for="useremail">Email</label>
-      <br>
       <input type="text" {{readonly}} name="useremail" value="{{useremail}}" maxlength="45" placeholder="Correo Electronico"/>
     </section>
-    <br>
+    <section class="row">
       <label for="username">Nombre de Usuario</label>
-      <br>
       <input type="text" {{readonly}} name="username" value="{{username}}" maxlength="45" placeholder="Nombre de Usuario"/>
-    <section>
     </section>
-    <br>
-    <section>
+    <section class="row">
       <label for="userest">Estado</label>
-      <br>
       {{if readonly}}
        <input type="hidden" id="userestdummy" name="userest" value="" />
       {{endif readonly}}
@@ -37,10 +31,8 @@
         <option value="SUS" {{userest_SUS}}>Suspendido</option>
       </select>
     </section>
-    <br>
-    <section>
+    <section class="row">
       <label for="usertipo">Tipo</label>
-      <br>
       {{if readonly}}
        <input type="hidden" id="usertipodummy" name="usertipo" value="" />
       {{endif readonly}}
@@ -50,10 +42,8 @@
         <option value="AUD" {{usertipo_AUD}}>Auditor</option>
       </select>
     </section>
-    <br>
-    <section>
+    <section class="row">
       <label for="userpswdest">Estado de Contraseña</label>
-      <br>
       {{if readonly}}
        <input type="hidden" id="userpswdestdummy" name="userpswdest" value="" />
       {{endif readonly}}
@@ -64,7 +54,6 @@
         <option value="SUS" {{userpswdest_SUS}}>Suspendido</option>
       </select>
     </section>
-    <br>
     {{if hasErrors}}
         <section>
           <ul>
@@ -90,7 +79,7 @@
       document.getElementById("btnCancelar").addEventListener("click", function(e){
         e.preventDefault();
         e.stopPropagation();
-        window.location.assign("index.php?page=mnt_usuarios");
+        window.location.assign("index.php?page=users_users");
       });
   });
 </script>

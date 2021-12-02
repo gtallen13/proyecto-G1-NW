@@ -50,10 +50,9 @@ a#btnAdd:hover {
   background-color: black;
 }
 /* Formulario */
-section.ww-form-wrapper {
-  background-color: black;
-}
+
 section.ww-form {
+  background-color: white;
   display: flex;
   align-items: center;
   flex-direction: space-evenly;

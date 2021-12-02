@@ -13,25 +13,37 @@
         <th>Nombre Completo</th>
         <th>Estado</th>
         <th>
-          <button id="btnAdd">Nuevo</button>
+        {{if CanInsert}}
+          <a href="index.php?page=users_user&mode=INS&usercod=0" id=">btnAdd">Nuevo</a>
+        {{endif CanInsert}}
         </th>
       </tr>
     </thead>
     <tbody>
+    {{foreach Users}}
       <tr>
-        <td>1</td>
-        <td><a href="">Franco Escamilla</a></td>
-        <td>ACT</td>
+        <td>{{usercod}}</td>
         <td>
-            <a href=""
+        {{if ~CanView}}
+          <a href="index.php?page=users_user&mode=INS&usercod={{usercod}}">{{useremail}}</a>
+        {{endif ~CanView}}
+        </td>
+        <td>{{userest}}</td>
+        <td>
+          {{if ~CanEdit}}
+            <a href="index.php?page=users_user&mode=UPD&usercod={{usercod}}"
             class="btn depth-1 w48" title="Editar">
             <i class="fas fa-edit"></i></a>
-            <a href=""
+          {{endif ~CanEdit}}
+          {{if ~CanDelete}}
+            <a href="index.php?page=users_user&mode=DEL&usercod={{usercod}}"
             class="btn depth-1 w48" title="Eliminar">
             <i class="fas fa-trash-alt"></i></a>
+            {{endif ~CanDelete}}
         </td>
       </tr>
     </tbody>
+  {{endfor Users}}
   </table>
 </section>
 <script>
@@ -39,7 +51,7 @@
       document.getElementById("btnAdd").addEventListener("click", function (e) {
         e.preventDefault();
         e.stopPropagation();
-        {* window.location.assign("index.php?page=mnt_categoria&mode=INS&catid=0"); *}
+        {* window.location.assign("index.php?page=users_user&mode=INS&catid=0"); *}
       });
     });
 </script>

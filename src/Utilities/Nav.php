@@ -7,16 +7,16 @@ class Nav {
     public static function setNavContext(){
         $tmpNAVIGATION = array();
         $userID = \Utilities\Security::getUserId();
-        if (\Utilities\Security::isAuthorized($userID, "MntUsuarios")) {
+        if (\Utilities\Security::isAuthorized($userID, "WW_Users")) {
             $tmpNAVIGATION[] = array(
-                "nav_url" => "index.php?page=mnt_usuarios",
+                "nav_url" => "index.php?page=users_users",
                 "nav_label" => "Usuarios"
             );
         }
-        if (\Utilities\Security::isAuthorized($userID, "WW_Scores")) {
+        if (\Utilities\Security::isAuthorized($userID, "WW_Books")) {
             $tmpNAVIGATION[] = array(
-                "nav_url" => "index.php?page=scores_scores",
-                "nav_label" => "Partituras"
+                "nav_url" => "index.php?page=books_books",
+                "nav_label" => "Libros"
             );
         }
         if (\Utilities\Security::isAuthorized($userID, "WW_Roles")) {
