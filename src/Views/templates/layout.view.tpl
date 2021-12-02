@@ -41,7 +41,7 @@
   {{{page_content}}}
   </main>  
   <footer>
-    <div  display: flex; align="center"><img src="public/imgs/hero/libros.png" flex-direction: column;></div>
+    <div  display: flex;><img src="public/imgs/hero/libros.png" flex-direction: column;></div>
     <div>Proyecto de Libros Honduras La Ceiba/Atlantida &copy;</div>
   </footer>
   {{foreach EndScripts}}
