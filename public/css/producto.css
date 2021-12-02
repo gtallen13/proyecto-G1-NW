@@ -1,0 +1,68 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #6C6C6C;
+}
+.contenedor{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+}
+.seccion1{
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(5, auto);
+    grid-template-rows: repeat(4, auto);
+    background: #E1E1E1;
+}
+.principalImg{
+    background: white;
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 2 ;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+.secondaryImg1{
+    grid-column-start: 2;
+    grid-column-end: 2;
+}
+.secondaryImg2{
+    grid-column-start: 3;
+    grid-column-end: 3;
+}
+.secondaryImg3{
+    grid-column-start: 4;
+    grid-column-end: 4;
+}
+.secondaryImg1, .secondaryImg2, .secondaryImg3{
+    background: white;
+    grid-row-start: 3;
+    grid-row-end: 3;
+    width: 100%;
+}
+.seccion2{
+    margin-right: 30px;
+}
+.seccion2 > div > h1, h2{
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+h1{
+    font-size: 48px;
+}
+h2{
+    font-size: 32px;
+}
+p{
+    margin-top: 20px;
+    margin-bottom: 40px;
+    margin-right: 20%;
+}
+button{
+    width: 120px;
+    height: 60px;
+    font-size: 20px;
+    background: #737373;
+    color: white;
+}
