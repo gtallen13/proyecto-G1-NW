@@ -1,6 +1,6 @@
 <?php
 
-namespace Controllers\Productos;
+namespace Controllers\Mnt;
 
 use Controllers\PublicController;
 
@@ -14,7 +14,7 @@ use Controllers\PublicController;
  * @license  MIT http://
  * @link     http://
  */
-class Prodcutos extends PublicController
+class Productos extends PublicController
 {
     /**
      * Ejecuta el Controlador de Scores
