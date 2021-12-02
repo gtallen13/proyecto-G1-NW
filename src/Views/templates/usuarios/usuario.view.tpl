@@ -1,28 +1,32 @@
 <h1>{{mode_dsc}}</h1>
+<link rel="stylesheet" href="/{{BASE_DIR}}/public/css/usuario.css" />
 <section>
   <form action="index.php?page=mnt_usuario&mode={{mode}}&usercod={{usercod}}"
     method="POST" >
     <section>
     <label for="usercod">Codigo</label>
+    <br>
     <input type="hidden" id="usercod" name="usercod" value="{{usercod}}"/>
     <input type="hidden" id="mode" name="mode" value="{{mode}}" />
     <input type="hidden" id="xsrftoken" name="xsrftoken" value="{{xsrftoken}}" />
     <input type="text" readonly name="usercoddummy" value="{{usercod}}"/>
     </section>
+    <br>
     <section>
       <label for="useremail">Email</label>
+      <br>
       <input type="text" {{readonly}} name="useremail" value="{{useremail}}" maxlength="45" placeholder="Correo Electronico"/>
     </section>
+    <br>
       <label for="username">Nombre de Usuario</label>
+      <br>
       <input type="text" {{readonly}} name="username" value="{{username}}" maxlength="45" placeholder="Nombre de Usuario"/>
     <section>
     </section>
-      <label for="userpswd">Contraseña</label>
-      <input type="text" {{readonly}} name="userpswd" value="{{userpswd}}" maxlength="45" placeholder="Contraseña"/>
-    <section>
-    </section>
+    <br>
     <section>
       <label for="userest">Estado</label>
+      <br>
       {{if readonly}}
        <input type="hidden" id="userestdummy" name="userest" value="" />
       {{endif readonly}}
@@ -33,19 +37,23 @@
         <option value="SUS" {{userest_SUS}}>Suspendido</option>
       </select>
     </section>
+    <br>
     <section>
       <label for="usertipo">Tipo</label>
+      <br>
       {{if readonly}}
        <input type="hidden" id="usertipodummy" name="usertipo" value="" />
       {{endif readonly}}
       <select id="usertipo" name="usertipo" {{if readonly}}disabled{{endif readonly}}>
-        <option value="PBL" {{usertipo_PBL}}>Publico</option>
+        <option value="PBL" {{usertipo_PBL}}>Cliente</option>
         <option value="ADM" {{usertipo_ADM}}>Administrador</option>
         <option value="AUD" {{usertipo_AUD}}>Auditor</option>
       </select>
     </section>
+    <br>
     <section>
       <label for="userpswdest">Estado de Contraseña</label>
+      <br>
       {{if readonly}}
        <input type="hidden" id="userpswdestdummy" name="userpswdest" value="" />
       {{endif readonly}}
@@ -56,6 +64,7 @@
         <option value="SUS" {{userpswdest_SUS}}>Suspendido</option>
       </select>
     </section>
+    <br>
     {{if hasErrors}}
         <section>
           <ul>
@@ -67,12 +76,13 @@
     {{endif hasErrors}}
     <section>
       {{if showaction}}
-      <button type="submit" name="btnGuardar" value="G">Guardar</button>
+      <button type="submit" name="btnGuardar" value="G" >Guardar</button>
       {{endif showaction}}
       <button type="button" id="btnCancelar">Cancelar</button>
     </section>
   </form>
 </section>
+
 
 
 <script>
