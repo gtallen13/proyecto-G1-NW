@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Open Sans";
+}
+h1 {
+  text-align: center;
+  padding: 2em;
+  padding-bottom: 6em;
+}
+h1.underline-small {
+  position: relative;
+}
+h1.underline-small::after {
+  content: "";
+  height: 2px;
+  width: 20%;
+  background: #bbb;
+  position: absolute;
+  left: calc(50% - 10%);
+  bottom: 5em;
+}
+hr.solid {
+  border-top: 1px solid #bbb;
+}
+.title-books {
+  text-align: center;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+.p-books {
+  text-align: center;
+}
+.flex-container {
+  padding-top: 2em;
+  display: flex;
+  flex-direction: row;
+}
+.flex-item {
+  padding: 3em;
+  align-items: center;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 350px;
+  height: 450px;
+  margin-bottom: 1em;
+}
+.section {
+  padding: 3rem 0;
+}
+.collection {
+  margin: 3rem 0;
+}
+.collection__container {
+  width: 100%;
+  padding: 0 1.6rem;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.collection__box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+  flex: 0 0 48%;
+  height: 30rem;
+}
+.collection__box img.collection_01 {
+  width: 350px;
+  height: 350px;
+}
+.collection__content {
+  flex: 0 0 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.collection__content h1 {
+  margin-top: 0.5rem;
+}
