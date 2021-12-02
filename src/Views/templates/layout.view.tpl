@@ -27,8 +27,8 @@
     <h1>{{SITE_TITLE}}</h1>
     <nav id="menu">
       <ul>
-        <li><a href="#"> <i class="fas fa-home"></i>&nbsp;Home</a></li>
-        <li><a href="index.php?page=index"><i class="fas fa-shopping-bag"></i>&nbsp;Shop</a></li>
+        <li><a href="index.php?page=index"> <i class="fas fa-home"></i>&nbsp;Home</a></li>
+        <li><a href="index.php?page=productos_productos"><i class="fas fa-shopping-bag"></i>&nbsp;Shop</a></li>
         <li><a href="index.php?page=sec_login"><i class="fas fa-sign-in-alt"></i>&nbsp;Sign In</a></li>
         <li><a href="index.php?page=sec_register"><i class="fas fa-user-plus"></i>&nbsp;Register</a></li>
       </ul>

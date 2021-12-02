@@ -1,6 +1,6 @@
 <?php
 
-namespace Controllers\Mnt;
+namespace Controllers\Productos;
 
 use Controllers\PublicController;
 
@@ -24,6 +24,6 @@ class Productos extends PublicController
     public function run(): void
     {
         $viewData = array();
-        \Views\Renderer::render("mnt/productos", $viewData);
+        \Views\Renderer::render("productos/productos", $viewData);
     }
 }
