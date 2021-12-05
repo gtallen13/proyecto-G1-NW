@@ -70,7 +70,7 @@
       document.getElementById("btnAdd").addEventListener("click", function (e) {
         e.preventDefault();
         e.stopPropagation();
-        window.location.assign("index.php?page=mnt_libreria&mode=INS&catid=0");
+        window.location.assign("index.php?page=mnt_librerias&mode=INS&catid=0");
       });
     });
 </script>

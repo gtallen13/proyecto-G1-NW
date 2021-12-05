@@ -34,8 +34,6 @@ class Librerias extends Table
             "catid" => intval($catid)
         );
         return self::executeNonQuery($sqlstr, $parametros);
-        // sqlstr = "UPDATE X SET Y = '".$Y."' where Z='".$Z."';";
-        // $Y = "'; DROP DATABASE mysql; SELECT * FROM (SELECT DATE)
     }
 
     public static function eliminarLibrerias($catid)

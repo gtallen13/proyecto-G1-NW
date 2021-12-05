@@ -12,9 +12,6 @@ class Librerias extends PublicController
     {
         $viewData = array();
         $viewData["items"] = \Dao\Mnt\Librerias::obtenerLibrerias();
-        $viewData["new_enabled"] = true;
-        $viewData["edit_enabled"] = true;
-        $viewData["delete_enabled"] = true;
         Renderer::render("mnt/librerias", $viewData);
     }
 }
