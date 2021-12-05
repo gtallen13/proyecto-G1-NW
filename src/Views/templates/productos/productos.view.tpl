@@ -32,7 +32,7 @@
       {{foreach Books}}
         <div class="collection__box">
           <div class="img__container">
-            <img class="collection_01" src="https://resizer.glanacion.com/resizer/tTXgzRPXploSpp4PkuFixr4EFks=/768x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/QS3KNYFVIFHPJLNBGX45PZCZSM.jpg" alt="">
+            <img class="collection_01" src="{{tempImg}}" alt="">
           </div>
           <div class="book-info">
             <h1>{{NOMBRE}}</h1>

@@ -4,26 +4,20 @@ namespace Controllers\Productos;
 
 use Controllers\PublicController;
 
-/**
- * Listado del WW para administrar las Partituras que estaran desplegadas en
- * el catálogo.
- *
- * @category Public
- * @package  Controllers
- * @author   Orlando J Betancourth <orlando.betancourth@gmail.com>
- * @license  MIT http://
- * @link     http://
- */
 class Productos extends PublicController
 {
-    /**
-     * Ejecuta el Controlador de Scores
-     *
-     * @return void
-     */
     public function run(): void
     {
         $viewData = array();
+        $viewData["Books"] = \Dao\Mnt\Books::obtenerMejoresLibros();    
+        $count = 0;
+        foreach($viewData["Books"] as $image)
+        {
+            $path = './tempFiles/bookImg'.$count.'.png';
+            file_put_contents($path,$viewData["Books"][$count]["IMAGEN"]);
+            $viewData["Books"][$count] += ["tempImg"=>$path] ;
+            $count += 1;
+        }
         \Views\Renderer::render("productos/productos", $viewData);
     }
 }
