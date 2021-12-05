@@ -1,60 +1,49 @@
 <head>
     <link rel="stylesheet" href="/{{BASE_DIR}}/public/css/style_p.css" />
-  </head>
+</head>
   <body>
-    <h1 class="underline-small">Behold! The soil of literature</h1>
-    <hr class="solid" />
+    <div class="hero-image">
+      <div class="hero-text">
+        <h1 class="hero-title">Behold! The soil of literature</h1>
+      </div>
+    </div>
     <h2 class="title-books">Featured Categories</h2>
     <p class="p-books">
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus
-      porro illum corrupti, maiores labore neque sapiente nobis cumque
-      voluptatum commodi.
+      Enjoy our wide catalog of books that you can enjoy at your leisure. Let your imagination reach new limits as you dive into the valleys of literature.
     </p>
     <div class="flex-container">
       <div class="flex-item">
-        <img
-          src="https://resizer.glanacion.com/resizer/tTXgzRPXploSpp4PkuFixr4EFks=/768x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/QS3KNYFVIFHPJLNBGX45PZCZSM.jpg"
-          alt=""
-        />
-        <p class="p-img">CATEGORY</p>
+        <img src="public/imgs/products/action.jpg" alt="" class="img-category"/>
+        <p class="p-img">Accion</p>
       </div>
       <div class="flex-item">
-        <img
-          src="https://resizer.glanacion.com/resizer/tTXgzRPXploSpp4PkuFixr4EFks=/768x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/QS3KNYFVIFHPJLNBGX45PZCZSM.jpg"
-          alt=""
-        />
-        <p>CATEGORY</p>
+        <img src="public/imgs/products/adventure.jpg" alt="" class="img-category"/>
+        <p class="p-img">Aventura</p>
       </div>
       <div class="flex-item">
-        <img
-          src="https://resizer.glanacion.com/resizer/tTXgzRPXploSpp4PkuFixr4EFks=/768x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/QS3KNYFVIFHPJLNBGX45PZCZSM.jpg"
-          alt=""
-        />
-        <p>CATEGORY</p>
+        <img src="public/imgs/products/comedy.jpg" alt="" class="img-category"/>
+        <p class="p-img">Comedia</p>
       </div>
     </div>
     <h2 class="title-books">Best Sellers</h2>
     <hr class="solid" />
     <section id="collection" class="section collection">
       <div class="collection__container" data-aos="fade-up" data-aos-duration="1200">
+      {{foreach Books}}
         <div class="collection__box">
           <div class="img__container">
             <img class="collection_01" src="https://resizer.glanacion.com/resizer/tTXgzRPXploSpp4PkuFixr4EFks=/768x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/QS3KNYFVIFHPJLNBGX45PZCZSM.jpg" alt="">
           </div>
-            <div class="">
-              <h1>PRODUCT NAME</h1>
-              <h1>$300</h1>
-            </div>
-        </div>
-        <div class="collection__box">
-          <div class="img__container">
-            <img class="collection_01" src="https://resizer.glanacion.com/resizer/tTXgzRPXploSpp4PkuFixr4EFks=/768x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/QS3KNYFVIFHPJLNBGX45PZCZSM.jpg" alt="">
+          <div class="book-info">
+            <h1>{{NOMBRE}}</h1>
+            <span>{{AUTOR}}</span>
+            <p>${{PRECIO}}</p>
+            <p>{{DESCRIPCION}}</p>
+            <a class="btnLearn" href="index.php?page=productos_producto&book={{ID}}">Learn More</a>
           </div>
-            <div class="">
-              <h1>PRODUCT NAME</h1>
-              <h1>$300</h1>
         </div>
-        </div>
+      {{endfor Books}}
+      </div>
     </section>
   </body>
 </html>
