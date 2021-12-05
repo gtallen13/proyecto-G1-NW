@@ -9,15 +9,23 @@ class Productos extends PublicController
     public function run(): void
     {
         $viewData = array();
-        $viewData["Books"] = \Dao\Mnt\Books::obtenerMejoresLibros();    
+        $viewData["Books"] = \Dao\Mnt\Books::obtenerMejoresLibros();
         $count = 0;
-        foreach($viewData["Books"] as $image)
+        if(!isset($viewData["Books"]))
         {
-            $path = './tempFiles/bookImg'.$count.'.png';
-            file_put_contents($path,$viewData["Books"][$count]["IMAGEN"]);
-            $viewData["Books"][$count] += ["tempImg"=>$path] ;
-            $count += 1;
+            \Views\Renderer::render("productos/no-products", $viewData);
         }
-        \Views\Renderer::render("productos/productos", $viewData);
+        else
+        {
+            foreach($viewData["Books"] as $image)
+            {
+                $path = './tempFiles/bookImg'.$count.'.png';
+                file_put_contents($path,$viewData["Books"][$count]["IMAGEN"]);
+                $viewData["Books"][$count] += ["tempImg"=>$path] ;
+                $count += 1;
+            }
+            \Views\Renderer::render("productos/productos", $viewData);
+
+        }
     }
 }
