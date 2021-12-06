@@ -31,6 +31,21 @@ class Books extends Table
         LIMIT 2";
         return self::obtenerRegistros($sqlStr, array());
     }
+    public static function obtenerLibrosMuestra()
+    {
+        $sqlStr = "SELECT COUNT(libros.idlibro) AS VENTAS,
+        libros.nomlibro AS NOMBRE,
+        libros.dsclibro AS DESCRIPCION,
+        libros.imglibro AS IMAGEN,
+        libros.preciolibro AS PRECIO,
+        libros.autor AS AUTOR,
+        libros.idlibro AS ID 
+        FROM libros
+        JOIN libros_usuarios
+        ON libros.idlibro = libros_usuarios.idlibro
+        GROUP BY libros_usuarios.idlibro";
+        return self::obtenerRegistros($sqlStr, array());
+    }
     public static function crearLibro(
         $nomlibro, 
         $dsclibro, 
