@@ -22,13 +22,17 @@
   margin: 10px;
 }
 .btnShop {
-  padding: 15px;
-  width: 30%;
-  background-color: gray;
+  padding: 25px;
+  background-color: black;
   color: whitesmoke;
   text-align: center;
   text-decoration: none;
+  opacity: 0.7;
   transition: all 1s;
+}
+.btnShop:hover {
+  opacity: 1;
+  color: whitesmoke;
 }
 .shop-wrapper {
   margin-top: 50px;
