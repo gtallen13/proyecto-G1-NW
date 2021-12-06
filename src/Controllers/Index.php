@@ -34,30 +34,28 @@ class Index extends PublicController
         \Utilities\Site::addLink("public/css/test.css");
 
         //Para agregar scripts de javascript externos
-        \Utilities\Site::addEndScript("public/js/sayhello.js");
+        // \Utilities\Site::addEndScript("public/js/sayhello.js");
 
         $viewData = array();
+        $viewData["Books"] = \Dao\Mnt\Books::obtenerMejoresLibros();
+        $count = 0;
+        //En case que no hay libros en la BD se muestra una vista de Cerrado
+        if(!isset($viewData["Books"]))
+        {
+            \Views\Renderer::render("closed", $viewData);
+        }
+        else
+        {
+            foreach($viewData["Books"] as $image)
+            {
+                $path = './tempFiles/bookImg'.$count.'.png';
+                file_put_contents($path,$viewData["Books"][$count]["IMAGEN"]);
+                $viewData["Books"][$count] += ["tempImg"=>$path] ;
+                $count += 1;
+            }
+            \Views\Renderer::render("index", $viewData);
 
-        $viewData["atomicArray"] = array("Hola","Esto","Es","Un","Arreglo");
-        $viewData["datoRaiz"] = "Hola estoy en la raiz";
-        $viewData["Fechas"] = array(
-            array("id" => "Lns", "desc"=>"Lunes"),
-            array("id" => "Mrt", "desc" => "Martes"),
-            array("id" => "Mrc", "desc" => "Miercoles"),
-            array("id" => "Jvs", "desc" => "Jueves"),
-            array("id" => "Vrn", "desc" => "Viernes"),
-            array("id" => "Sbd", "desc" => "Sabado"),
-            array("id" => "Dmg", "desc" => "Domingo")
-        );
-
-        $viewData["estaAutorizadoVer"] = false;
-
-        $viewData["UserData"]= array(
-            "codigo" => "1",
-            "descripcion" => "Usuario"
-        );
-
-        \Views\Renderer::render("index", $viewData);
+        }
     }
 }
 ?>
