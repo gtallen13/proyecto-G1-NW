@@ -1,0 +1,64 @@
+.top-wrapper h1 {
+  text-align: center;
+  font-weight: 100;
+  font-size: 50px;
+}
+
+.top-wrapper {
+  height: 90vh;
+  width: 100%;
+  border-bottom: 1px solid gray;
+  padding: 15px;
+  position: relative;
+}
+.images-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.top-images {
+  width: 35%;
+  height: 300px;
+  margin: 10px;
+}
+.btnShop {
+  padding: 15px;
+  width: 30%;
+  background-color: gray;
+  color: whitesmoke;
+  text-align: center;
+  text-decoration: none;
+  transition: all 1s;
+}
+.shop-wrapper {
+  margin-top: 50px;
+  width: 100%;
+  text-align: center;
+}
+.products-wrapper h2 {
+  text-align: center;
+  margin: 20px;
+  font-weight: 100;
+  font-size: 50px;
+}
+
+.carousel-slide {
+  height: 80vh;
+}
+.carousel-item {
+  height: 80vh;
+}
+.about-wrapper {
+  height: 50vh;
+  width: 100%;
+  text-align: center;
+  padding: 50px;
+}
+.about-wrapper h1 {
+  font-size: 40px;
+  font-weight: 100;
+  margin-bottom: 20px;
+}
+.about-wrapper p {
+  font-size: 20px;
+}

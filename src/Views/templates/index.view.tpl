@@ -1,41 +1,39 @@
-<h1>{{SITE_TITLE}}</h1>
-<img src="public/imgs/hero/1.jpg" alt="hero 1" />
-
-<ul>
-  {{foreach atomicArray}}
-    <li>{{this}}</li>
-  {{endfor atomicArray}}
-</ul>
-<table>
-  <tr>
-    <th>Codigo</th>
-    <th>Descripcion</th>
-    <th>Datos de Raiz</th>
-  </tr>
-  {{foreach Fechas}}
-  <tr>
-    <td>{{id}}</td>
-    <td>{{desc}}</td>
-    <td>
-      <select name="" id="">
-        {{foreach ~atomicArray}}
-          <option value="{{this}}">{{this}}</option>
-          {{endfor ~atomicArray}}
-      </select>
-    </td>
-  </tr>
-  {{endfor Fechas}}
-</table>
-
-<hr/>
-{{if estaAutorizadoVer}}
-  <h2>Esto solo se ve si esta autorizado</h2>
-{{endif estaAutorizadoVer}}
-{{ifnot estaAutorizadoVer}}
-  <h2>Esto solo se ve si no esta autorizado</h2>
-{{endifnot estaAutorizadoVer}}
-
-<hr>
-{{with UserData}}
-  Usuario: ({{codigo}}) {{descripcion}}
-{{endwith UserData}}
+<div class="top-wrapper">
+  <h1>Book Worm</h1>
+  <div class="images-container">
+    <img src="public/imgs/image1.jpg" class="top-images"/>
+    <img src="public/imgs/image2.jpg" class="top-images"/>
+    <img src="public/imgs/image3.jpg" class="top-images"/>
+  </div>
+  <div class="shop-wrapper">
+    <a href="#" class="btnShop">Shop Now</a>
+  </div>
+</div>
+<div class="products-wrapper">
+  <h2>Featured Products</h2>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+    {{foreach Books}}
+      <div class="carousel-item active">
+        <img src="{{tempImg}}" class="d-block w-100" alt="{{NOMBRE}}">
+      </div>
+    {{endfor Books}}
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+<div class="about-wrapper">
+  <h2>About our shop</h2>
+  <p>Fugiat eu ad tempor minim dolore veniam est incididunt tempor eu aute. Cupidatat in labore duis elit dolor amet nostrud non qui non mollit incididunt. Tempor dolor esse veniam velit sunt nulla reprehenderit reprehenderit commodo velit exercitation enim. </p>
+</div>
