@@ -18,11 +18,19 @@
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner">
-    {{foreach Books}}
       <div class="carousel-item active">
+          <img src="public/imgs/cover-slide.jpg" class="d-block w-100" alt="{{NOMBRE}}">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="slide-text">Book Worm</h5>
+            <p class="slide-text">The #1 e-book website</p>
+          </div>
+      </div>
+    {{foreach Books}}
+      <div class="carousel-item">
         <img src="{{tempImg}}" class="d-block w-100" alt="{{NOMBRE}}">
       </div>
     {{endfor Books}}
+    
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
