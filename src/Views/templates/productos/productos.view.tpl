@@ -29,7 +29,7 @@
     <hr class="solid" />
     <section id="collection" class="section collection">
       <div class="collection__container" data-aos="fade-up" data-aos-duration="1200">
-      {{foreach Books}}
+      {{foreach TopBooks}}
         <div class="collection__box">
           <div class="img__container">
             <img class="collection_01" src="{{tempImg}}" alt="">
@@ -42,7 +42,24 @@
             <a class="btnLearn" href="index.php?page=productos_producto&book={{ID}}">Learn More</a>
           </div>
         </div>
-      {{endfor Books}}
+      {{endfor TopBooks}}
+      </div>
+    </section>
+    <section class="products">
+      <h2>Our books</h2>
+      <div>
+        {{foreach AllBooks}}
+          <div class="book-card">
+            <img class="collection_01" src="{{tempImg}}" alt="">
+            <div class="card-text">
+              <h4>{{nomlibro}}<h4>
+              <span>{{preciolibro}}</span>
+              <p>Autor: {{autor}}</p>
+              <p>Categoria: {{categoria}}</p>
+              <a href="index.php?page=productos_producto&idlibro={{idlibro}}">See more</a>
+            </div>
+          </div>
+        {{endfor AllBooks}}
       </div>
     </section>
   </body>

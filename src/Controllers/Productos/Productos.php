@@ -9,20 +9,30 @@ class Productos extends PublicController
     public function run(): void
     {
         $viewData = array();
-        $viewData["Books"] = \Dao\Mnt\Books::obtenerMejoresLibros();
+        $viewData["TopBooks"] = \Dao\Mnt\Books::obtenerMejoresLibros();
+        $viewData["AllBooks"] = \Dao\Mnt\Books::obtenerLibros();
         $count = 0;
-        if(!isset($viewData["Books"]))
+        
+        if(!isset($viewData["TopBooks"]))
         {
             \Views\Renderer::render("productos/no-products", $viewData);
         }
         else
         {
-            foreach($viewData["Books"] as $image)
+            foreach($viewData["TopBooks"] as $image)
             {
                 $path = './tempFiles/bookImg'.$count.'.png';
-                file_put_contents($path,$viewData["Books"][$count]["IMAGEN"]);
-                $viewData["Books"][$count] += ["tempImg"=>$path] ;
+                file_put_contents($path,$viewData["TopBooks"][$count]["IMAGEN"]);
+                $viewData["TopBooks"][$count] += ["tempImg"=>$path] ;
                 $count += 1;
+            }
+            $count = 0;
+            foreach($viewData["AllBooks"] as $image)
+            {
+                $path = './tempFiles/prodImg'.$count.'.png';
+                file_put_contents($path,$viewData["AllBooks"][$count]["imglibro"]);
+                $viewData["AllBooks"][$count] += ["tempImg"=>$path];
+                $count =+ 1;
             }
             \Views\Renderer::render("productos/productos", $viewData);
 
