@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 80px;
+  margin-top: 80px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+form.example input[type="text"] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #4e4e4e;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #797979;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+  margin-top: 80px;
+}
+
+.container .card {
+  width: 45%;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  margin: 20px;
+  text-align: center;
+}
+
+.container .card img {
+  width: 100%;
+}
+
+.container .card h4 {
+  font-size: 50px;
+  margin-top: 30px;
+}
+
+.container .card p {
+  margin-top: -30px;
+  font-size: 23px;
+}
+.button {
+  display: block;
+  background: #505050;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.button:hover {
+  background: #797979;
+}
