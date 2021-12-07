@@ -1,12 +1,11 @@
 <?php
 
-namespace Controllers\Producto;
+namespace Controllers\Mnt;
 
 use Controllers\PrivateController;
 
-class Producto extends PrivateController
+class Librerias extends PrivateController
 {
-
     public function run(): void
     {
         $viewData = array();
