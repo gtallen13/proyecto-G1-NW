@@ -33,8 +33,8 @@ class Nav {
         }
         if (\Utilities\Security::isAuthorized($userID, "Librerias")) {
             $tmpNAVIGATION[] = array(
-                "nav_url" => "index.php?page=mnt_librerias",
-                "nav_label" => "Library"
+                "nav_url" => "index.php?page=clients_librerias&user=".$userID,
+                "nav_label" => "Library",
             );
         }
         if (\Utilities\Security::isAuthorized($userID, "Productos")) {
