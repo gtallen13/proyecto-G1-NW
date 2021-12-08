@@ -60,7 +60,15 @@ class Login extends \Controllers\PublicController
                                 \Utilities\Context::getContextByKey("redirto")
                             );
                         } else {
-                            \Utilities\Site::redirectTo("index.php");
+                            if ($dbUser["usertipo"] == "ADM")
+                            {
+                                \Utilities\Site::redirectTo("index.php?page=admin_admin");
+                            }
+                            else if ($dbUser["usertipo"] == "CLN")
+                            {
+                                
+                                \Utilities\Site::redirectTo("index.php?page=index");                                
+                            }
                         }
                     }
                 } else {

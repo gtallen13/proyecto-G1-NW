@@ -1,6 +1,6 @@
 <?php
 namespace Dao\Mnt;
-
+ 
 use Dao\Table;
 
 class Books extends Table
