@@ -1,8 +1,13 @@
 </head>
 <link rel="stylesheet" href="/{{BASE_DIR}}/public/css/style_lbr.css" />
 <body>
-    <h1>Tu libreria</h1>
+    <h1>Your Library</h1>
     <div class="container">
+    <div class="empty-library" style="display:{{show}};">
+        <h1>Missing some books huh? Let's go get some!</h1>
+        <a href="index.php?page=productos_productos"><i class="fas fa-shopping-bag"></i></a>
+    </div>
+
     {{foreach Libros}}
         <div class="card">
             <img src="{{tempImg}}"/>            

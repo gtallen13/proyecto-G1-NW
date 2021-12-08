@@ -13,17 +13,25 @@ class Librerias extends PrivateController
             "usercod" => "",
             "hasErrors" => "",
             "Errors" => array(),
+            "show"=>"none"
         );
         $usercod  = $_GET["user"];
         $count = 0;
         $viewData["Libros"] = \Dao\Mnt\Usuarios::getLibreria($usercod);
-        foreach ($viewData["Libros"] as $image)
+        if (!isset($viewData["Libros"]))
         {
-            $path = './tempFiles/bookImg'.$count.'.png';
-            file_put_contents($path,$viewData["Libros"][$count]["IMAGENLIBRO"]);
-            $viewData["Libros"][$count] += ["tempImg"=>$path];
-            $count += 1;
+            $viewData["show"] = "flex";
         }
+        else{
+            foreach ($viewData["Libros"] as $image)
+            {
+                $path = './tempFiles/bookImg'.$count.'.png';
+                file_put_contents($path,$viewData["Libros"][$count]["IMAGENLIBRO"]);
+                $viewData["Libros"][$count] += ["tempImg"=>$path];
+                $count += 1;
+            }
+        }
+        
         // print_r($viewData["Libros"][0]["tempImg"]);
         // die();
         \Views\Renderer::render("clients/librerias", $viewData);
