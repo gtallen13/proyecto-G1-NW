@@ -15,7 +15,7 @@
       </div>
       <div class="row">
         <div class="col-12 col-m-6" style="text-align: center;"> 
-          <a href="index.php?page=mnt_usuarios"><img type="image" src="https://img.icons8.com/material/480/name--v1.png" height="100" width="100" style="border: 0;" /></a>
+          <a href="index.php?page=users_users"><img type="image" src="https://img.icons8.com/material/480/name--v1.png" height="100" width="100" style="border: 0;" /></a>
         </div>
         
         <div class="col-12 col-m-6" style="text-align: center;">
