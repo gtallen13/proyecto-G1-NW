@@ -20,5 +20,14 @@ CREATE TABLE libros_usuarios (
     FOREIGN KEY (usercod) REFERENCES usuario(usercod),
     FOREIGN KEY(idlibro) REFERENCES libros(idlibro)
 );
+DROP TABLE IF EXISTS carretilla;
+CREATE TABLE carretilla(
+    usercod	BIGINT(11) NOT NULL,
+    idlibro INT NOT NULL,
+    fchagregado DATETIME NOT NULL,
+    dsclibro VARCHAR(25) NOT NULL,
+    preciolibro DOUBLE(8,2) NOT NULL,
+    estadoCompra VARCHAR(3) NOT NULL
+);
 
 
