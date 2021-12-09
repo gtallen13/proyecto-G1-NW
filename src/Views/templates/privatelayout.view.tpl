@@ -31,7 +31,7 @@
         <li><a href="index.php?page=admin_admin"><i class="fas fa-home"></i>&nbsp;Inicio</a></li>
         {{foreach NAVIGATION}}
             <li><a href="{{nav_url}}">{{nav_label}}</a></li>
-        {{endfor NAVIGATION}}
+        {{endfor NAVIGATION}} 
         <li><a href="index.php?page=sec_logout"><i class="fas fa-sign-out-alt"></i>&nbsp;Salir</a></li>
       </ul>
     </nav>

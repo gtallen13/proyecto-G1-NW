@@ -27,7 +27,7 @@
     </section>
     <section style="display:{{show}};" class="row">
       <label for="imglibro">Imagen</label>
-      <input type="file" accept=".png, .jpeg, .jpg" {{readonly}} name="imglibro" value="{{imglibro}}"/>
+      <input type="file" accept=".png" {{readonly}} name="imglibro" value="{{imglibro}}"/>
     </section>
     <section style="display:{{show}};" class="row">
       <label for="pdflibro">Documento (PDF)</label>
