@@ -30,7 +30,6 @@
     <section id="collection" class="section collection">
       <div class="collection__container" data-aos="fade-up" data-aos-duration="1200">
       {{foreach Books}}
-      <a href="index.php?page=descargas_descarga&idlibro={{ID}}" >Download</a>
         <div class="collection__box">
           <div class="img__container">
             <img class="collection_01" src="{{tempImg}}" alt="">
