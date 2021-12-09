@@ -70,6 +70,21 @@ class Usuarios extends Table
         $sqlStr = "SELECT * FROM roles";
         return self::obtenerRegistros($sqlStr,array());
     }
+    public static function getLibreria($usercod)
+    {
+        $sqlStr = "SELECT libros.nomlibro AS NOMBRELIBRO, 
+        libros.idlibro AS IDLIBRO,
+        libros.imglibro AS IMAGENLIBRO, 
+        libros.dsclibro AS DESCLIBRO,
+        usuario.usercod AS USERCOD
+        FROM libros
+        JOIN libros_usuarios
+        ON libros.idlibro = libros_usuarios.idlibro
+        JOIN usuario
+        ON libros_usuarios.usercod = usuario.usercod
+        WHERE usuario.usercod = :usercod";
+        return self::obtenerRegistros($sqlStr,array("usercod"=>intval($usercod)));
+    }
 }
 
 ?>

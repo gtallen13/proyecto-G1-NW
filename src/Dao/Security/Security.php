@@ -103,18 +103,17 @@ class Security extends \Dao\Table
         $newUser["useractcod"] = hash("sha256", $email.time());
         switch($tipo)
         {
-            case "PBL":
-                $newUser["usertipo"] = UsuarioTipo::PUBLICO;
+            case "CLN":
+                $newUser["usertipo"] = UsuarioTipo::CLIENTE;
                 break;
             case "ADM":
-                $newUser["usertipo"] = UsuarioTipo::ADMINITRADAOR;
+                $newUser["usertipo"] = UsuarioTipo::ADMINISTRADOR;
                 break;
             case "AUD":
                 $newUser["usertipo"] = UsuarioTipo::AUDITOR;
                 break;
                 
         }
-
         $sqlIns = "INSERT INTO `usuario` (`useremail`, `username`, `userpswd`,
             `userfching`, `userpswdest`, `userpswdexp`, `userest`, `useractcod`,
             `userpswdchg`, `usertipo`)
@@ -122,7 +121,6 @@ class Security extends \Dao\Table
             ( :useremail, :username, :userpswd,
             now(), :userpswdest, :userpswdexp, :userest, :useractcod,
             now(), :usertipo);";
-
         return self::executeNonQuery($sqlIns, $newUser);
     }
     static public function getUsuarioByEmail($email)

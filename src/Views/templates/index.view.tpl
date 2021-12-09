@@ -6,7 +6,7 @@
     <img src="public/imgs/image3.jpg" class="top-images"/>
   </div>
   <div class="shop-wrapper">
-    <a href="#" class="btnShop">Shop Now</a>
+    <a href="index.php?page=productos_productos" class="btnShop">Shop Now</a>
   </div>
 </div>
 <div class="products-wrapper">
