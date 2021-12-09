@@ -27,9 +27,12 @@ CREATE TABLE carretilla(
     usercod	BIGINT(11) NOT NULL,
     idlibro INT NOT NULL,
     fchagregado DATETIME NOT NULL,
+    nomlibro VARCHAR(25) NOT NULL,
     dsclibro VARCHAR(25) NOT NULL,
     preciolibro DOUBLE(8,2) NOT NULL,
-    estadoCompra VARCHAR(3) NOT NULL
+    estadoCompra VARCHAR(3) NOT NULL,
+    FOREIGN KEY(usercod) REFERENCES usuario(usercod),
+    FOREIGN KEY(idlibro) REFERENCES libros(idlibro)
 );
 -- CREATE TRIGGER add_roles_usuarios
 -- AFTER INSERT ON usuario

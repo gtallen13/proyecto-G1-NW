@@ -15,7 +15,11 @@ class Usuarios extends Table
         $sqlStr = "SELECT * from usuario where usercod = :usercod;";
         return self::obtenerUnRegistro($sqlStr, array("usercod"=>intval($usercod)));
     }
-
+    public static function obtenerUserName($username)
+    {
+        $sqlStr = "SELECT usercod from usuario where username = :username;";
+        return self::obtenerUnRegistro($sqlStr, array("username"=>$username));
+    }
     public static function editarUsuario($username,$userpswdest,$userest,$usertipo,$usercod)
     {
         

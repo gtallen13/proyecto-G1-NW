@@ -30,7 +30,19 @@
                     {{dsc}}
                 </p> 
             </div><hr>
-            <button>Add to Cart</button>
+            <form method="POST" action="index.php?page=productos_libroproducto">
+            {{with login}}
+                <input type="hidden" value="{{userName}}" id="userName" name="userName"/>
+            {{endwith login}}
+                <input type="hidden" value="{{idlibro}}" id="idlibro" name="idlibro"> 
+                <input type="hidden" value="{{dsc}}" id="dsc" name="dsc"> 
+                <input type="hidden" value="{{precio}}" id="precio" name="precio"> 
+                <input type="hidden" value="{{nombre}}" id="nomlibro" name="nomlibro"> 
+                <input type="hidden" value="{{idlibro}}" id="idlibro" name="idlibro"> 
+
+                <button type="submit">Add to Cart</button>
+                <span style="display:{{show}}">{{agregado}}</span>
+            </form>
         </section>
     </div>
 </body>

@@ -43,6 +43,12 @@ class Nav {
                 "nav_label" => "Shop"
             );
         }
+        if (\Utilities\Security::isAuthorized($userID, "Caretilla")) {
+            $tmpNAVIGATION[] = array(
+                "nav_url" => "index.php?page=clients_cart&user=".$userID,
+                "nav_label" => "Cart"
+            );
+        }
         
        
         \Utilities\Context::setContext("NAVIGATION", $tmpNAVIGATION);
