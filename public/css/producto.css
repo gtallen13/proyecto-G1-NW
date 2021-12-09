@@ -23,6 +23,11 @@ body{
     margin-top: 50px;
     margin-bottom: 30px;
 }
+.principalImg > img{
+    display: block;
+    margin: auto;
+
+}
 .secondaryImg1{
     grid-column-start: 2;
     grid-column-end: 2;
@@ -60,8 +65,8 @@ p{
     margin-right: 20%;
 }
 button{
-    width: 120px;
-    height: 60px;
+    width: auto;
+    height: auto;
     font-size: 20px;
     background: #737373;
     color: white;

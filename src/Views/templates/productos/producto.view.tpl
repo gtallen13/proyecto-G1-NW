@@ -6,29 +6,28 @@
     <div class="contenedor">
         <section class="seccion1">
             <div class="principalImg">
-                <img src="" alt="">
+                <img src="{{tmpimage}}" alt="" height="300" width="400">
             </div>
             <div class="secondaryImg1">
-                <img src="" alt="">
+                <img src="{{tmpimage}}" alt="" height="100" width="200">
             </div>
             <div class="secondaryImg2">
-                <img src="" alt="">
+                <img src="{{tmpimage}}" alt="" height="100" width="200">
             </div>
             <div class="secondaryImg3">
-                <img src="" alt="">
+                <img src="{{tmpimage}}" alt="" height="100" width="200">
             </div>
         </section>
         <section class="seccion2">
             <div>
-                <h1>Product Title</h1><hr>
+                <h1>{{nombre}}</h1><hr>
             </div>
             <div>
-                <h2>$ 1,232.00</h2><hr>
+                <h2>{{precio}}</h2><hr>
             </div>
             <div>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum repellendus dolorem porro, eaque minima expedita quisquam ad dolor beatae totam voluptatibus molestias. Neque quibusdam quasi fuga accusantium laboriosam non numquam.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, labore. Repudiandae, a aliquam? Accusamus nobis error, pariatur, omnis sint dignissimos nulla eius laborum velit temporibus unde libero voluptatibus voluptate quibusdam?
+                    {{dsc}}
                 </p> 
             </div><hr>
             <button>Add to Cart</button>

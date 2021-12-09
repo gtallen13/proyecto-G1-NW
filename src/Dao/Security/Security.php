@@ -79,7 +79,7 @@ class Security extends \Dao\Table
                 $newUser["userpswdest"] = Estados::BLOQUEADO;
                 break;
             case "SUS":
-                $newUser["userpswdest"] = Estados::SUSPENIDDO;
+                $newUser["userpswdest"] = Estados::SUSPENDIDO;
                 break;
                 
         }

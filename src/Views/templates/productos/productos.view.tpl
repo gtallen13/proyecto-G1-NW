@@ -39,6 +39,7 @@
             <span>{{AUTOR}}</span>
             <p>${{PRECIO}}</p>
             <p>{{DESCRIPCION}}</p>
+            <a class="btnLearn" href="index.php?page=productos_libroproducto&book={{ID}}">Learn More</a>
           </div>
         </div>
       {{endfor TopBooks}}
@@ -55,7 +56,7 @@
               <span>{{preciolibro}}</span>
               <p>Autor: {{autor}}</p>
               <p>Categoria: {{categoria}}</p>
-              <a href="index.php?page=productos_producto&idlibro={{idlibro}}">See more</a>
+              <a href="index.php?page=productos_libroproducto&book={{idlibro}}">Learn More</a>
             </div>
           </div>
         {{endfor AllBooks}}
