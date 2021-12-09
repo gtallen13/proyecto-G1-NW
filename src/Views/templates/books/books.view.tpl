@@ -36,7 +36,7 @@
         </td>
         <td>{{preciolibro}}</td>
         <td>
-          <img src="data:image;base64" height="100" width="200"/>
+          <img src="{{tempImg}}" height="100" width="200"/>
         </td>
         <td>
             {{if ~CanEdit}}

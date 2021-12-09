@@ -7,6 +7,18 @@ class Nav {
     public static function setNavContext(){
         $tmpNAVIGATION = array();
         $userID = \Utilities\Security::getUserId();
+        if (\Utilities\Security::isAuthorized($userID, "InicioAdmin")) {
+            $tmpNAVIGATION[] = array(
+                "nav_url" => "index.php?page=admin_admin",
+                "nav_label" => "Home"
+            );
+        }
+        if (\Utilities\Security::isAuthorized($userID, "InicioPublico")) {
+            $tmpNAVIGATION[] = array(
+                "nav_url" => "index.php?page=index",
+                "nav_label" => "Home"
+            );
+        }
         if (\Utilities\Security::isAuthorized($userID, "WW_Users")) {
             $tmpNAVIGATION[] = array(
                 "nav_url" => "index.php?page=users_users",

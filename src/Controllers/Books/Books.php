@@ -9,9 +9,14 @@ class Books extends PrivateController
     {
         $viewData = array();
         $viewData["items"] = \Dao\Mnt\Books::obtenerLibros();
-        // header("Content-type: image");
-        // echo $viewData["items"][0]["imglibro"];
-        // die();
+        $count = 0;
+        foreach($viewData["items"] as $item)
+        {
+            $path = './tempFiles/bookImg'.$count.'.png';
+            file_put_contents($path, $viewData["items"][$count]["imglibro"]);
+            $viewData["items"][$count] += ["tempImg"=>$path];
+            $count += 1;
+        }
         
         $viewData["CanInsert"] = self::isFeatureAutorized("Controllers\Books\Books\New");
         $viewData["CanEdit"] = self::isFeatureAutorized("Controllers\Books\Books\Upd");
