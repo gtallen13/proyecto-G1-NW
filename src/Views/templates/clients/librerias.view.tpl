@@ -13,7 +13,7 @@
             <img src="{{tempImg}}"/>            
             <h4>{{NOMBRELIBRO}}</h4>
             <p>{{DESCLIBRO}}</p>
-            <a href="#" class="button">Descargar</a>
+            <a href="index.php?page=descargas_descarga&idlibro={{IDLIBRO}}" class="button">Descargar</a>
         </div>
     {{endfor Libros}}
     </div>  
