@@ -39,6 +39,7 @@ class Admin extends \Controllers\PrivateController
      */
     public function run() :void
     {
+        \Utilities\Site::addLink("public/css/inicio.css");
         \Views\Renderer::render("admin/admin", array());
     }
 }
