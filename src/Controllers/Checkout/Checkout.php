@@ -26,7 +26,7 @@ class Checkout extends PublicController{
                     $order["dsclibro"], 
                     $order["idlibro"],
                     $order["preciolibro"], 
-                    15, 
+                    $order["preciolibro"]*.15, 
                     1, 
                     "DIGITAL_GOODS");
             }
